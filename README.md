@@ -1,2 +1,1 @@
-# kael-mugshot
-A Mugshot Script For QB-Core Servers
+## Kael MugShot Script For Qb-Core Servers
