@@ -68,7 +68,7 @@ RegisterNetEvent("kael-mugshot:client:takemugshot", function(officer)
     RenderScriptCams(1, 0, 0, 1, 1)
     Wait(250)
 	CreateThread(function()
-        FreezeEntityPosition(PlayerPedId(), true)
+        FreezeEntityPosition(PlayerPed, true)
         SetPauseMenuActive(false)
         while InProgress do
             DisableAllControlActions(0)
