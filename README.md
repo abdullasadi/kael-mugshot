@@ -1,9 +1,13 @@
+![Cigar_Job_1-01](https://github.com/abdullasadi/kael-cigar/assets/17822126/d26ee07c-5d6d-4008-afef-ae29c8d37cca)
+
 ### FiveM Mugshot Script Made By Kael Scripts
 
-## Features
-- Easy Configuration
-- 0.0 Resmon
-- Discord Massage
+## Preview
+- [Youtube]()
+
+## INSTALL
+
+Drag and Drop
 
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
