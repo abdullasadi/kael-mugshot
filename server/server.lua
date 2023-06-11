@@ -10,7 +10,7 @@ RegisterNetEvent("kael-mugshot:server:takemugshot", function(targetid)
     local TargetId = tonumber(targetid)
     local Target = QBCore.Functions.GetPlayer(TargetId)
     if Target then 
-        if TargetId == source then
+        if TargetId ~= source then
             TriggerClientEvent("kael-mugshot:client:takemugshot", TargetId, source)
         else 
             TriggerClientEvent('QBCore:Notify', source, "You Can't Take Mugshot Your Self", 'error')
