@@ -61,7 +61,15 @@ RegisterNetEvent("kael-mugshot:client:takemugshot", function(officer)
         end
     end)
 	Wait(250)
-	CreateScaleForm(ScaleformBoard, 'SET_BOARD', Config.BoardHeader, Name, CitizenId, DOB, 0, math.random(000, 999), 116)
+	BeginScaleformMovieMethod(ScaleformBoard, 'SET_BOARD')
+    PushScaleformMovieMethodParameterString(Config.BoardHeader)
+    PushScaleformMovieMethodParameterString(Name)
+    PushScaleformMovieMethodParameterString(CitizenId)
+    PushScaleformMovieMethodParameterString(DOB)
+    PushScaleformMovieFunctionParameterInt(0)
+    PushScaleformMovieFunctionParameterInt(math.random(000, 999))
+    PushScaleformMovieFunctionParameterInt(116)
+    EndScaleformMovieMethod()
 	local MugCam = CreateCam("DEFAULT_SCRIPTED_CAMERA", 1)
 	SetCamCoord(MugCam, Config.CameraPos.pos)
     SetCamRot(MugCam, Config.CameraPos.rotation, 2)
@@ -124,17 +132,15 @@ end
 function LoadAnimDict(dict)
     while (not HasAnimDictLoaded(dict)) do
         RequestAnimDict(dict)
-        Wait(5)
+        Wait(0)
     end
 end
 
 function LoadScale(scalef)
 	local handle = RequestScaleformMovie(scalef)
-	if handle ~= 0 then
-		while not HasScaleformMovieLoaded(handle) do
-			Wait(0)
-		end
-	end
+    while not HasScaleformMovieLoaded(handle) do
+        Wait(0)
+    end
 	return handle
 end
 
@@ -152,23 +158,4 @@ function CreateRenderModel(name, model)
 	return handle
 end
 
-function CreateScaleForm(scale, check, ...)
-	local t
-	local args = { ... }
-	BeginScaleformMovieMethod(scale, check)
-	for k, v in ipairs(args) do
-		t = type(v)
-		if t == 'string' then
-			PushScaleformMovieMethodParameterString(v)
-		elseif t == 'number' then
-			if string.match(tostring(v), "%.") then
-				PushScaleformMovieFunctionParameterFloat(v)
-			else
-				PushScaleformMovieFunctionParameterInt(v)
-			end
-		elseif t == 'boolean' then
-			PushScaleformMovieMethodParameterBool(v)
-		end
-	end
-	EndScaleformMovieMethod()
-end
+
