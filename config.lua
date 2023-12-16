@@ -1,7 +1,8 @@
 Config = {
     Debug = true,
     Core ="qb-core",
-    Target = "qb-target"
+    Target = "qb-target",
+    Input = "qb-input"
 }
 
 Config.PoliceJobName = "police"

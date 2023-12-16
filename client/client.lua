@@ -21,7 +21,7 @@ CreateThread(function()
 end)
 
 RegisterNetEvent("kael-mugshot:Client:mugshotinput", function()
-    local picture = exports['qb-input']:ShowInput({
+    local picture = exports[Config.Input]:ShowInput({
         header = "Mugshot Input",
         submitText = "Take Mugshot",
         inputs = {
