@@ -14,6 +14,7 @@ Config.CameraPos = {
     pos = vector3(473.05, -1012.56, 26.90),
     rotation = vector3(0.0,  0.0, 358.04),
 }
+Config.Distance = 30.0  
 
 Config.LogTitle = "Kael Mugshot"
 Config.LogName = "Kael Mugshot"
