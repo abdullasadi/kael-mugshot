@@ -3,7 +3,7 @@ local QBCore = exports[Config.Core]:GetCoreObject()
 CreateThread(function()
     print("^1Kael^7-^1Mugshot ^7| ^5Made ^2By ^6Kael ^3& ^4FM")
     exports[Config.Target]:AddBoxZone('Mugshottarget', vector3(Config.TargetLoc.x, Config.TargetLoc.y, Config.TargetLoc.z), 0.1, 0.3, {
-        name = "PoliceMugshot",
+        name = "Mugshottarget",
         heading = 0,
         debugPoly = Config.Debug,
         minZ = 22.97,
